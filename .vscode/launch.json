@@ -1,6 +1,26 @@
 {
     "version": "0.2.0",
     "configurations": [
-        // Use Ctrl+Space to trigger IntelliSense and get assistance on the supported configurations for AL development.
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/DTETPREPROD/",
+            "serverInstance": "DTETPREPROD",
+            "authentication": "UserPassword",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "port": 8049,
+            "usePublicURLFromServer": true,
+            "schemaUpdateMode": "ForceSync"
+            
+            
+        }
     ]
 }
