@@ -1,0 +1,96 @@
+page 33065747 "Employee Training History List"
+{
+    PageType = List;
+    ApplicationArea = All;
+    UsageCategory = Lists;
+    SourceTable = "Employee Training History";
+    // CardPageId = "Employee Training History Card";
+    ModifyAllowed = false;
+    InsertAllowed = false;
+    DeleteAllowed = false;
+
+    layout
+    {
+        area(Content)
+        {
+            repeater(GroupName)
+            {
+                field("Entry No";rec."Entry No")
+                {
+                    ApplicationArea = All;
+                }
+                field("HRMS ID";rec."HRMS ID")
+                {
+                    ApplicationArea = All;
+                }
+                field("Employee Name";rec.Name)
+                {
+                    ApplicationArea = All;
+                }
+                field(Designation;rec.Designation)
+                {
+                    ApplicationArea = All;
+                }
+                field("Type Of Training";rec."Type Of Training")
+                {
+                    ApplicationArea = All;
+                }
+                field("Traing Course Title";rec."Course Name")
+                {
+                    ApplicationArea = All;
+                }
+                field("Training Starting Date";rec."Start Date")
+                {
+                    ApplicationArea = All;
+                }
+                field("Training Ending Date";rec.EndDate)
+                {
+                    ApplicationArea = All;
+                }
+                field("Duration Of Training";rec."Duration Of Training")
+                {
+                    ApplicationArea = All;
+                }
+                field("Conducted By";rec."Conducted By")
+                {
+                    ApplicationArea = All;
+                }
+                field("Training Location";rec."Training Location")
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
+        area(Factboxes)
+        {
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action(Download)
+            {
+                ApplicationArea = All;
+                // Promoted = true;
+                Image = Download;
+
+                trigger OnAction()var FilemngCU: Codeunit "File Management";
+                inst: InStream;
+                os: OutStream;
+                tempblobloc: Codeunit "Temp Blob";
+                begin
+                    Rec.CalcFields(Certificate);
+                    if Rec.Certificate.HasValue then begin
+                        Rec.Certificate.CreateInStream(inst);
+                        tempblobloc.CreateOutStream(os);
+                        CopyStream(os, inst);
+                        FilemngCU.BLOBExport(tempblobloc, 'Employee_training_' + Rec."HRMS ID" + '.pdf', true);
+                    end
+                    else
+                        Error('File Not found');
+                end;
+            }
+        }
+    }
+}
