@@ -1,22 +1,25 @@
 {
-  "id": "80d2b1c6-052b-4415-be34-1eaaa32dfdca",
-  "name": "HRMS Module",
-  "publisher": "Default publisher",
+  "id": "98470e35-976e-410c-8e4c-227778875a7b",
+  "name": "HRMS",
+  "publisher": "Default Publisher",
   "version": "1.0.0.0",
   "runtime": "9.0",
   "target": "OnPrem",
   "platform": "20.0.42653.43007",
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
   },
+  "features": [
+    "NOIMPLICITWITH"
+  ],
   "dependencies": [
     {
-      "id": "9950e2b6-cbbc-47bc-a4f1-d7d4d6a28b3e",
-      "name": "InfrastuctureManagement",
+      "id": "e1f25533-60aa-4265-8733-26cf9d2ab9e3",
+      "name": "InfraStructure",
       "version": "1.0.0.0",
-      "publisher": "Default publisher"
+      "publisher": "Default Publisher"
     },
     {
       "id": "5a00b86e-b7c2-4faf-8a88-aa39b5c0c8b5",
@@ -27,15 +30,14 @@
     {
       "id": "c1335042-3002-4257-bf8a-75c898ccb1b8",
       "name": "Application",
-      "version": "20.0.0.0",
+      "version": "20.3.42673.43026",
       "publisher": "Microsoft"
     }
   ],
-  "propagateDependencies": true,
   "idRanges": [
     {
       "from": 50000,
-      "to": 99999999
+      "to": 999999
     }
   ]
 }

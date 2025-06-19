@@ -3,11 +3,15 @@
     "configurations": [
         {
             "name": "Your own server",
+<<<<<<< Updated upstream
             "request": "launch",
             "type": "al",
             "environmentType": "OnPrem",
-            "server": "http://localhost:8080/DTETPREPROD/",
-            "serverInstance": "DTETPREPROD",
+            //"server": "http://localhost:8080/DTETPREPROD/",
+          //  "serverInstance": "DTETPREPROD",
+          "server": "http://localhost:8080/DTETSANDBOX/",
+          "serverInstance": "DTETSAND",
+
             "authentication": "UserPassword",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -16,11 +20,12 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "tenant": "default",
-            "port": 8049,
+            //"port": 8049,
+            
+"port": 10124,
             "usePublicURLFromServer": true,
             "schemaUpdateMode": "ForceSync"
             
             
         }
-    ]
-}
+    }
