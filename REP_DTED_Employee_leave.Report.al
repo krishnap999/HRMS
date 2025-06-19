@@ -1,4 +1,4 @@
-report 33065833 REP_DTED_Employee_leave
+report 70500 REP_DTED_Employee_leave
 {
     ApplicationArea = All;
     Caption = 'REP_DTED_Employee_leave';

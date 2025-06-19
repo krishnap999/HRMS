@@ -519,8 +519,8 @@ End Function
         <Field Name="Academic_Year">
           <DataField>Academic_Year</DataField>
         </Field>
-        <Field Name="Performance_Rating">
-          <DataField>Performance_Rating</DataField>
+        <Field Name="Performance_Appraisal_Review">
+          <DataField>Performance_Appraisal_Review</DataField>
         </Field>
       </Fields>
       <Query>

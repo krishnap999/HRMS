@@ -1,4 +1,4 @@
-page 33066449 "Employee Card New"
+page 70522 "Employee Card New"
 {
     PageType = Card;
     //ApplicationArea = All;
@@ -157,7 +157,7 @@ page 33066449 "Employee Card New"
                     ApplicationArea = All;
                     ExtendedDatatype = Masked;
                 }
-                field("SLCM Employee";"SLCM Employee")
+                field("SLCM Employee";Rec."SLCM Employee")
                 {
                     ApplicationArea = All;
                 }

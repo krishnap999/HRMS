@@ -1,4 +1,4 @@
-table 33065865 "Employee Training History"
+table 70520 "Employee Training History"
 {
     DataClassification = ToBeClassified;
 

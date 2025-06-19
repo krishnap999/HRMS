@@ -1,4 +1,4 @@
-report 33065783 "Annual Estab. Part-A"
+report 70501 "Annual Estab. Part-A"
 {
     Caption = 'Annual Establishment Part - A Report';
     UsageCategory = ReportsAndAnalysis;

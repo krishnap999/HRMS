@@ -1,4 +1,4 @@
-table 33065969 "Transfer Application Employee"
+table 70527 "Transfer Application Employee"
 {
     DataClassification = ToBeClassified;
     Caption = 'Transfer application';
@@ -68,10 +68,16 @@ table 33065969 "Transfer Application Employee"
         {
             DataClassification = ToBeClassified;
         }
-        field(12;"Current Station";Code[20])
+        // Start Anmol 20 Feb 2025
+        // field(12;"Current Station";Code[20])
+        // {
+        //     DataClassification = ToBeClassified;
+        // }
+        field(12;"Current Station";Code[100])
         {
             DataClassification = ToBeClassified;
         }
+        // End Anmol20 Feb 2025
         field(13;"Status";Option)
         {
             OptionMembers = Submitted, Processed, Rejected;

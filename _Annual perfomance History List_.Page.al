@@ -1,7 +1,9 @@
-page 33066425 "Annual perfomance History List"
+page 70508 "Annual perfomance History List"
 {
     ApplicationArea = All;
-    Caption = 'Annual Internal perfomance review History List';
+    // Start anmol 288 jan 25 new Caption added
+    //Caption = 'Annual Internal perfomance review History List';
+    Caption = 'Perfomance Apprasial Review History List';
     PageType = List;
     SourceTable = "Annual Performance Review";
     UsageCategory = History;
@@ -41,10 +43,16 @@ page 33066425 "Annual perfomance History List"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Academic Year field.';
                 }
-                field("Performance Rating";Rec."Performance Rating")
+                // Start Anmol 27 jan 25
+                // field("Performance Rating"; Rec."Performance Rating")
+                // {
+                //     ApplicationArea = All;
+                //     ToolTip = 'Specifies the value of the Performance Rating field.';
+                // }
+                // Added below fields
+                field("Performance Appraisal Review";Rec."Performance Appraisal Review")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Performance Rating field.';
                 }
             }
         }

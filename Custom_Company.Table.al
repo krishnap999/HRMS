@@ -1,4 +1,4 @@
-table 33065987 Custom_Company
+table 70500 Custom_Company
 {
     Caption = 'Custom_Company';
     DataClassification = ToBeClassified;

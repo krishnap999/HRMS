@@ -1,4 +1,4 @@
-page 33065749 "Employee Additional Info Card"
+page 70520 "Employee Additional Info Card"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -38,6 +38,7 @@ page 33065749 "Employee Additional Info Card"
                 }
                 field("Current Station";rec."Current Station")
                 {
+                    Caption = 'Deployment Location'; //ashutosh megha 15-5-25
                     ApplicationArea = All;
                 }
                 field("Base Qualification";rec."Base Qualification")
@@ -64,25 +65,22 @@ page 33065749 "Employee Additional Info Card"
                 {
                     ApplicationArea = All;
                 }
-                field(Designation;Designation)
+                field(Designation;Rec.Designation)
                 {
                     ApplicationArea = All;
                 }
-                field("Home Dist";"Home Dist")
+                field("Home Dist";Rec."Home Dist")
                 {
                     ApplicationArea = All;
                 }
-                field("Deployment Start Date";Rec."Deployment Start Date")
+                field("Deployment Date";Rec."Deployment Date")
                 {
-                    ApplicationArea = All;
-                }
-                field("Deployment End Date";"Deployment End Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Deployment Location";"Deployment Location")
-                {
+                    caption = 'Deployment Start Date'; //ashutosh megha 15-5-25
                     ApplicationArea = all;
+                }
+                field("Deployment End Date";Rec."Deployment End Date")
+                {
+                    ApplicationArea = all; //ashutosh megha 15-5-25
                 }
             }
         }

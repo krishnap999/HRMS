@@ -1,4 +1,4 @@
-table 33065968 "Financial Upg Application"
+table 70522 "Financial Upg Application"
 {
     DataClassification = ToBeClassified;
 
@@ -61,6 +61,16 @@ table 33065968 "Financial Upg Application"
         field(10;"Status";Option)
         {
             OptionMembers = Applied, Objected, Processed, Rejected;
+        }
+        // Start Anmol 
+        field(11;"Sl_no";Integer)
+        {
+            DataClassification = ToBeClassified;
+        // AutoIncrement = true;
+        }
+        field(14;"Effective Date Of MACP";Date)
+        {
+            DataClassification = ToBeClassified;
         }
     }
     keys

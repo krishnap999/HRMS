@@ -1,4 +1,4 @@
-page 33066429 "Employee Custom Lists"
+page 70524 "Employee Custom Lists"
 {
     ApplicationArea = All;
     Caption = 'Employee Custom Lists';
@@ -21,6 +21,7 @@ page 33066429 "Employee Custom Lists"
                 field("No.";Rec."No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'HRMS ID';
                     ToolTip = 'Specifies the number of the involved entry or record, according to the specified number series.';
                 }
                 field("First Name";Rec."First Name")
@@ -113,7 +114,7 @@ page 33066429 "Employee Custom Lists"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Base Qualification field.';
                 }
-                field("Home Dist as per HRMS Site";"Home Dist as per HRMS Site")
+                field("Home Dist as per HRMS Site";Rec."Home Dist as per HRMS Site")
                 {
                     ApplicationArea = All;
                 }
@@ -173,27 +174,20 @@ page 33066429 "Employee Custom Lists"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Aadhaar No field.';
                 }
-                field("SLCM Employee";"SLCM Employee")
+                field("SLCM Employee";Rec."SLCM Employee")
                 {
                     ApplicationArea = All;
                 }
-                field("Deployment Location";"Deployment Location")
+                field("Deployment Location";Rec."Deployment Location")
                 {
                     ApplicationArea = All;
                 }
-                field("Deployment Date";"Deployment Date")
+                field("Deployment Start Date";Rec."Deployment Date")
                 {
+                    Caption = 'Deployment Start Date'; //megha 16-05-2025
                     ApplicationArea = All;
                 }
-                field("Deployment Start Date";"Deployment Start Date")
-                {
-                    ApplicationArea = all;
-                }
-                field("Deployment End Date";"Deployment End Date")
-                {
-                    ApplicationArea = all;
-                }
-                field("Last Name";"Last Name")
+                field("Deployment End Date";Rec."Deployment End Date") //megha 16-05-2025
                 {
                     ApplicationArea = all;
                 }
@@ -217,7 +211,7 @@ page 33066429 "Employee Custom Lists"
             {
                 ApplicationArea = All;
 
-                trigger OnAction()var Addi: Record 33065970;
+                trigger OnAction()var Addi: Record 70517;
                 begin
                     Addi.Init();
                     Addi."HRMS ID":='32001318';

@@ -1,4 +1,4 @@
-page 33065740 "Promotion History Card"
+page 70541 "Promotion History Card"
 {
     PageType = Card;
     // ApplicationArea = All;

@@ -1,4 +1,4 @@
-report 33065680 "Promotion Details Preview"
+report 70528 "Promotion Details Preview"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

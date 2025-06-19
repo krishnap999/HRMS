@@ -1,4 +1,4 @@
-table 33065974 "archived Court Cases "
+table 70508 "archived Court Cases "
 {
     DataClassification = ToBeClassified;
     Caption = 'Court Cases';

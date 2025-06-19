@@ -1,4 +1,4 @@
-report 33065805 "DTET Transfer Details"
+report 70523 "DTET Transfer Details"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

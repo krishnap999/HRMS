@@ -1,4 +1,4 @@
-page 33066446 "Finance Upg. App Card"
+page 70537 "Finance Upg. App Card"
 {
     PageType = Card;
     //ApplicationArea = All;

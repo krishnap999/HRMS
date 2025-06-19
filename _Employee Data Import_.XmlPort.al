@@ -1,4 +1,4 @@
-xmlport 33065472 "Employee Data Import"
+xmlport 70501 "Employee Data Import"
 {
     Caption = 'Employee Land Details';
     Direction = Import;

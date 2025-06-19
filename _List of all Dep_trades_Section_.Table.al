@@ -1,4 +1,4 @@
-table 33065971 "List of all Dep/trades/Section"
+table 70524 "List of all Dep/trades/Section"
 {
     DataClassification = ToBeClassified;
     LookupPageId = "Dep/trades/Section Lists";
@@ -54,7 +54,7 @@ table 33065971 "List of all Dep/trades/Section"
             Clustered = true;
         }
     }
-    var DeptTradeSecRec: Record "List of  Dep/tra/Sec History";
+    var DeptTradeSecRec: Record "List of Dep/tra/Sec History";
     EntNo: Integer;
     trigger OnInsert()begin
         "Created By":=UserId;

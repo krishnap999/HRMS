@@ -1,4 +1,4 @@
-report 33065700 "Annual Internal Performance"
+report 70505 "Annual Internal Performance"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
@@ -25,9 +25,14 @@ report 33065700 "Annual Internal Performance"
             column(Academic_Year;"Academic Year")
             {
             }
-            column(Performance_Rating;"Performance Rating")
+            // Start Anmol 27 jan 25
+            // column(Performance_Rating;"Performance Rating")
+            // {
+            // }
+            column(Performance_Appraisal_Review;"Performance Appraisal Review")
             {
             }
+            // end anmol 27 jan 25
             trigger onpreDataItem()begin
             //  If AcademicYear = '' then
             //Error('Please Provide Academic Year for which you want to generate Annaul Performance');

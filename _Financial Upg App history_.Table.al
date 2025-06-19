@@ -1,7 +1,9 @@
-table 33065973 "Financial Upg App history"
+table 70521 "Financial Upg App history"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archieved Financial Upg Appplication';
+    LookupPageId = "Financial Upg Application";
+    DrillDownPageId = "Financial Upg Application";
 
     fields
     {
@@ -73,6 +75,11 @@ table 33065973 "Financial Upg App history"
             DataClassification = ToBeClassified;
         }
         field(13;"Modified Date Time";DateTime)
+        {
+            DataClassification = ToBeClassified;
+        }
+        // Start Anmol 29 jan 25
+        field(14;"Effective Date Of MACP";Date)
         {
             DataClassification = ToBeClassified;
         }

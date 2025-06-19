@@ -1,4 +1,4 @@
-report 33065747 "DTET Employee Training Details"
+report 70518 "DTET Employee Training Details"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

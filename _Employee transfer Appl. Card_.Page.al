@@ -1,4 +1,4 @@
-page 33066448 "Employee transfer Appl. Card"
+page 70532 "Employee transfer Appl. Card"
 {
     Caption = 'Employee transfer application consolidated Card';
     PageType = Card;
@@ -87,7 +87,7 @@ page 33066448 "Employee transfer Appl. Card"
 
                     trigger OnValidate()var myInt: Integer;
                     begin
-                        rec.TestField(Status, Status::Rejected);
+                        rec.TestField(Status, Rec.Status::Rejected);
                     end;
                 }
             }

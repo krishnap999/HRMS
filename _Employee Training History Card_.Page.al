@@ -1,4 +1,4 @@
-page 33065746 "Employee Training History Card"
+page 70529 "Employee Training History Card"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -11,51 +11,51 @@ page 33065746 "Employee Training History Card"
         {
             group(GroupName)
             {
-                field("Entry No";"Entry No")
+                field("Entry No";Rec."Entry No")
                 {
                     ApplicationArea = All;
                 }
-                field("HRMS ID";"HRMS ID")
+                field("HRMS ID";Rec."HRMS ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Employee Name";Name)
+                field("Employee Name";Rec.Name)
                 {
                     ApplicationArea = All;
                 }
-                field(Designation;Designation)
+                field(Designation;Rec.Designation)
                 {
                     ApplicationArea = All;
                 }
-                field("Type Of Training";"Type Of Training")
+                field("Type Of Training";Rec."Type Of Training")
                 {
                     ApplicationArea = All;
                 }
-                field("Traing Course Title";"Course Name")
+                field("Traing Course Title";rec."Course Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Training Starting Date";"Start Date")
+                field("Training Starting Date";Rec."Start Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Training Ending Date";EndDate)
+                field("Training Ending Date";Rec.EndDate)
                 {
                     ApplicationArea = All;
                 }
-                field("Duration Of Training";"Duration Of Training")
+                field("Duration Of Training";Rec."Duration Of Training")
                 {
                     ApplicationArea = All;
                 }
-                field("Conducted By";"Conducted By")
+                field("Conducted By";Rec."Conducted By")
                 {
                     ApplicationArea = All;
                 }
-                field("Training Location";"Training Location")
+                field("Training Location";Rec."Training Location")
                 {
                     ApplicationArea = All;
                 }
-                field("Spcified Type of training";"Spcified Type of training")
+                field("Spcified Type of training";Rec."Spcified Type of training")
                 {
                     ApplicationArea = All;
                 }

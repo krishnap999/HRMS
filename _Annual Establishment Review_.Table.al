@@ -1,4 +1,4 @@
-table 33065883 "Annual Establishment Review"
+table 70502 "Annual Establishment Review"
 {
     DataClassification = ToBeClassified;
 

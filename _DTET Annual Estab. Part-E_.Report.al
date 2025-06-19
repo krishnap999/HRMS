@@ -1,4 +1,4 @@
-report 33065825 "DTET Annual Estab. Part-E"
+report 70512 "DTET Annual Estab. Part-E"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

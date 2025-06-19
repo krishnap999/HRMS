@@ -1,4 +1,4 @@
-page 33065725 "Employee Additional Info lists"
+page 70521 "Employee Additional Info lists"
 {
     PageType = List;
     ApplicationArea = All;
@@ -66,18 +66,6 @@ page 33065725 "Employee Additional Info lists"
                 field("Dept./Trade/Section";rec."Dept./Trade/Section")
                 {
                     ApplicationArea = All;
-                }
-                field("Deployment Start Date";"Deployment Start Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Deployment End Date";"Deployment End Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Deployment Location";"Deployment Location")
-                {
-                    ApplicationArea = all;
                 }
             }
         }

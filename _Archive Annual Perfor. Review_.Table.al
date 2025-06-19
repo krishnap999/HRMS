@@ -1,4 +1,4 @@
-table 33065985 "Archive Annual Perfor. Review"
+table 70506 "Archive Annual Perfor. Review"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archived Annual Performance Review';
@@ -24,9 +24,11 @@ table 33065985 "Archive Annual Perfor. Review"
         field(6;"Academic Year";Code[20])
         {
         }
-        field(7;"Performance Rating";Text[3])
+        //Anmol start
+        field(7;"Performance Appraisal Review";Enum PerformanceRatingEnum)
         {
         }
+        //Anmol end
         field(8;"Created By";Code[50])
         {
         }

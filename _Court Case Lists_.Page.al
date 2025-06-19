@@ -1,4 +1,4 @@
-page 33066432 "Court Case Lists"
+page 70512 "Court Case Lists"
 {
     ApplicationArea = All;
     Caption = 'Court CaseLists';

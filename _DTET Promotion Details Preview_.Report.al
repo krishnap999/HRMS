@@ -1,4 +1,4 @@
-report 33065806 "DTET Promotion Details Preview"
+report 70520 "DTET Promotion Details Preview"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

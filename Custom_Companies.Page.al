@@ -1,4 +1,4 @@
-page 33066444 Custom_Companies
+page 70500 Custom_Companies
 {
     ApplicationArea = All;
     Caption = 'Custom_Companies';

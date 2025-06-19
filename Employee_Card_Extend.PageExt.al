@@ -1,17 +1,17 @@
-pageextension 33065646 Employee_Card_Extend extends "Employee Card"
+pageextension 70500 Employee_Card_Extend extends "Employee Card"
 {
     layout
     {
         addlast(General)
         {
-            field("SLCM Employee";"SLCM Employee")
+            field("SLCM Employee";Rec."SLCM Employee")
             {
                 ApplicationArea = All;
             }
         }
     }
     trigger OnInsertRecord(Bool: Boolean): Boolean begin
-        "SLCM Employee":=true;
+        Rec."SLCM Employee":=true;
     end;
 // trigger OnOpenPage()
 // begin

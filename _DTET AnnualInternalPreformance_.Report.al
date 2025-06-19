@@ -1,4 +1,4 @@
-report 33065811 "DTET AnnualInternalPreformance"
+report 70514 "DTET AnnualInternalPreformance"
 {
     caption = 'DTET Annual Internal Preformance';
     UsageCategory = ReportsAndAnalysis;
@@ -30,9 +30,14 @@ report 33065811 "DTET AnnualInternalPreformance"
                 column(Academic_Year;"Academic Year")
                 {
                 }
-                column(Performance_Rating;"Performance Rating")
+                // Start Anmol 27 jan 25
+                // column(Performance_Rating;"Performance Rating")
+                // {
+                // }
+                column(Performance_Appraisal_Review;"Performance Appraisal Review")
                 {
                 }
+                // End Anmol 27 jan 25
                 trigger onpreDataItem()begin
                     "Annual Performance Review".ChangeCompany(Company.Name);
                     "Annual Performance Review".SetRange("Academic Year", AcademicYear);

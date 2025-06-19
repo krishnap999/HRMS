@@ -1,4 +1,4 @@
-table 33065980 "Arch Employee Promotion hist"
+table 70504 "Arch Employee Promotion hist"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archived Employee Promotion History';
@@ -15,13 +15,22 @@ table 33065980 "Arch Employee Promotion hist"
         field(3;"Name";Text[90])
         {
         }
-        field(4;"From Designation";Code[20])
+        // Start Anmol 20 Feb 2025
+        // field(4;"From Designation";Code[20])
+        // {
+        // }
+        // field(5;"To Designation";Code[20])
+        // {
+        //     Caption = 'Promoted To';
+        // }
+        field(4;"From Designation";Code[100])
         {
         }
-        field(5;"To Designation";Code[20])
+        field(5;"To Designation";Code[100])
         {
             Caption = 'Promoted To';
         }
+        // End Anmol 20 Feb 2025
         field(6;"Promotion Order Date";Date)
         {
         }

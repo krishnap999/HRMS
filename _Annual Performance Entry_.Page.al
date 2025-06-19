@@ -1,10 +1,13 @@
-page 33065737 "Annual Performance Entry"
+page 70509 "Annual Performance Entry"
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    Caption = 'Annual Internal Performance Review';
+    // Start Anmol
+    //Caption = 'Annual Internal Performance Review';
+    Caption = 'Performance Apprasial Review Form (PAR)';
 
+    // End Anmol
     layout
     {
         area(Content)
@@ -51,9 +54,12 @@ page 33065737 "Annual Performance Entry"
                 }
                 field("Performance Review Score";PerformanceRating)
                 {
-                    MaxValue = 10;
-                    MinValue = 0;
+                    // Start Anmol 17 Jan 25
+                    // MaxValue = 10;
+                    // MinValue = 0;
                     ApplicationArea = All;
+                    // Anmol 21 Jan 2025 add caption
+                    Caption = 'Performance Appraisal Review';
                 }
             }
         }
@@ -75,7 +81,7 @@ page 33065737 "Annual Performance Entry"
                     AnnualPerformanceReview.Designation:=Designation;
                     AnnualPerformanceReview.Department:=Department;
                     AnnualPerformanceReview."Academic Year":=AcademicYaer;
-                    AnnualPerformanceReview."Performance Rating":=Format(PerformanceRating);
+                    AnnualPerformanceReview."Performance Appraisal Review":=PerformanceRating;
                     AnnualPerformanceReview.Insert(true);
                     Message('Annual Performance Recorded Successfully For Employee %1', HRMSID);
                     CurrPage.Close();
@@ -88,6 +94,9 @@ page 33065737 "Annual Performance Entry"
     Designation: Text[30];
     Department: Text[30];
     AcademicYaer: Code[10];
-    PerformanceRating: Integer;
+    // Start Anmol 17 Jan 25
+    //PerformanceRating: Integer
+    PerformanceRating: Enum PerformanceRatingEnum;
+    // End Anmol 17 Jan 25
     AnnualPerformanceReview: Record "Annual Performance Review";
 }

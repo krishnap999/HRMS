@@ -1,4 +1,4 @@
-page 33065752 "Court Cases Details Input"
+page 70513 "Court Cases Details Input"
 {
     PageType = Card;
     ApplicationArea = All;

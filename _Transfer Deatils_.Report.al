@@ -1,4 +1,4 @@
-report 33065646 "Transfer Deatils"
+report 70531 "Transfer Deatils"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

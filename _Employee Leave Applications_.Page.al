@@ -1,4 +1,4 @@
-page 33066442 "Employee Leave Applications"
+page 70527 "Employee Leave Applications"
 {
     ApplicationArea = All;
     Caption = 'Employee Leave Application Consolidated List';
@@ -59,6 +59,12 @@ page 33066442 "Employee Leave Applications"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Status field.';
                 }
+                // Start Anmol 17 Jan 2025
+                field("Reason for Decline";Rec."Reason for Decline")
+                {
+                    ApplicationArea = All;
+                }
+            // End Anmol
             }
         }
     }

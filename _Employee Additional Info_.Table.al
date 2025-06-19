@@ -1,4 +1,4 @@
-table 33065970 "Employee Additional Info"
+table 70517 "Employee Additional Info"
 {
     DataClassification = ToBeClassified;
 
@@ -89,19 +89,14 @@ table 33065970 "Employee Additional Info"
             DataClassification = ToBeClassified;
             TableRelation = Designation.Code;
         }
-        field(50032;"Deployment Start Date";Date)
+        field(50002;"Deployment Location";Code[20])
         {
-            DataClassification = ToBeClassified;
         }
-        field(50033;"Deployment End Date";Date)
+        field(50003;"Deployment Date";Date)
         {
-            DataClassification = ToBeClassified;
         }
-        field(50034;"Deployment Location";Code[20])
+        field(50004;"Deployment End Date";Date) //ashutosh megha 15-5-25        
         {
-            DataClassification = ToBeClassified;
-            TableRelation = Institute."Institute Code";
-            ValidateTableRelation = false;
         }
     }
     keys
@@ -138,9 +133,6 @@ table 33065970 "Employee Additional Info"
             if Rec."Dept./Trade/Section" <> '' then Emp."Dept./Trade/Section":=Rec."Dept./Trade/Section";
             if Rec.Designation <> '' then emp.Designation:=Rec.Designation;
             if Rec."Home Dist" <> '' then emp."Home Dist":=Rec."Home Dist";
-            if Rec."Deployment Start Date" <> 0D then emp."Deployment Start Date":=Rec."Deployment Start Date";
-            if Rec."Deployment End Date" <> 0D then emp."Deployment End Date":=Rec."Deployment End Date";
-            if Rec."Deployment Location" <> '' then emp."Deployment Location":=Rec."Deployment Location";
             Emp.Modify(true);
         end;
     end;

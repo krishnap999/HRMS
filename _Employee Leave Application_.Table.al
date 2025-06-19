@@ -1,4 +1,4 @@
-table 33065986 "Employee Leave Application"
+table 70518 "Employee Leave Application"
 {
     DataClassification = ToBeClassified;
 
@@ -41,7 +41,9 @@ table 33065986 "Employee Leave Application"
         field(7;"Type of Leave";Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = "EL", "HPL", "EOL", "Medical Leave", "Maternity Leave", "Study Leave", Other;
+            // Start Anmol 17 Jan 2025 Add Paternity and CL
+            //OptionMembers = "EL","HPL","EOL","Medical Leave","Maternity Leave","Study Leave","Paternity","CL",Other;
+            OptionMembers = "EL", "HPL", "EOL", "CL", "Paternity Leave", "Medical Leave", "Maternity Leave", "Study Leave", Other;
         }
         field(12;"Upload Document";Blob)
         {
@@ -67,6 +69,11 @@ table 33065986 "Employee Leave Application"
         {
             DataClassification = ToBeClassified;
             OptionMembers = "Pending", "Forwarded to Govt.", "Sanctioned", "Declined";
+        }
+        // Start Anmol 17 Jan 2025
+        field(14;"Reason for Decline";Text[100])
+        {
+            DataClassification = ToBeClassified;
         }
     }
     keys

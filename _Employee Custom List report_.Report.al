@@ -1,4 +1,4 @@
-report 33065832 "Employee Custom List report"
+report 70525 "Employee Custom List report"
 {
     ApplicationArea = All;
     Caption = 'Employee Custom List report';

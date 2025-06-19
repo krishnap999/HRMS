@@ -1,4 +1,4 @@
-table 33065978 "Archived Transfer App Employee"
+table 70513 "Archived Transfer App Employee"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archived Employee Transfer application';

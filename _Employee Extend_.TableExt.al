@@ -1,4 +1,4 @@
-tableextension 33065861 "Employee Extend" extends Employee
+tableextension 70500 "Employee Extend" extends Employee
 {
     LookupPageId = "Employee Custom Lists";
     DrillDownPageId = "Employee Custom Lists";
@@ -65,7 +65,10 @@ tableextension 33065861 "Employee Extend" extends Employee
         field(50014;"Pension Remark";Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = " ", "Regular", "NPS";
+            // Start Anmol 17 Jan 2025
+            // OptionMembers = " ", "Regular", "NPS";
+            // End Anmol
+            OptionMembers = " ", "GPF", "NPS";
         }
         field(50016;"EPIC No";Code[30])
         {
@@ -96,7 +99,9 @@ tableextension 33065861 "Employee Extend" extends Employee
         {
             DataClassification = ToBeClassified;
         }
-        field(50021;"Current Station";Code[20])
+        //Start Anmol 21 Feb 2025 code length change 20 to 100
+        // field(50021; "Current Station"; Code[20])
+        field(50021;"Current Station";Code[100])
         {
             DataClassification = ToBeClassified;
             TableRelation = Institute."Institute Code";
@@ -151,15 +156,11 @@ tableextension 33065861 "Employee Extend" extends Employee
         }
         field(50031;"Deployment Date";Date)
         {
+            Caption = 'Deployment Start Date'; //megha 16-05-2025
             DataClassification = ToBeClassified;
         }
-        field(50032;"Deployment Start Date";Date)
+        field(50032;"Deployment End Date";Date) //megha 16-05-2025
         {
-            DataClassification = ToBeClassified;
-        }
-        field(50033;"Deployment End Date";Date)
-        {
-            DataClassification = ToBeClassified;
         }
         modify("No.")
         {

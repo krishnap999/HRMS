@@ -1,4 +1,4 @@
-page 33066437 "RTI Details Input"
+page 70543 "RTI Details Input"
 {
     PageType = Card;
     ApplicationArea = All;

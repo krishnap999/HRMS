@@ -1,4 +1,4 @@
-table 33065869 "Designation"
+table 70515 "Designation"
 {
     DataClassification = ToBeClassified;
     LookupPageId = "Designation Lists";

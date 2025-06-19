@@ -1,4 +1,4 @@
-page 33066398 "Annual Estb Review List"
+page 70506 "Annual Estb Review List"
 {
     PageType = List;
     ApplicationArea = All;
@@ -11,67 +11,67 @@ page 33066398 "Annual Estb Review List"
         {
             repeater(GroupName)
             {
-                field("Sl.No";"Sl.No")
+                field("Sl.No";Rec."Sl.No")
                 {
                     ApplicationArea = All;
                 }
-                field("Establishment Type";"Establishment Type")
+                field("Establishment Type";Rec."Establishment Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Post Group";"Post Group")
+                field("Post Group";Rec."Post Group")
                 {
                     ApplicationArea = All;
                 }
-                Field("Dept./Trade/Section";"Dept./Trade/Section")
+                Field("Dept./Trade/Section";Rec."Dept./Trade/Section")
                 {
                     ApplicationArea = All;
                 }
-                field(Designation;Designation)
+                field(Designation;Rec.Designation)
                 {
                     ApplicationArea = All;
                 }
-                field("Pay Scale GP";"Pay Scale GP")
+                field("Pay Scale GP";Rec."Pay Scale GP")
                 {
                     ApplicationArea = All;
                 }
-                field("Pay scale 6th pay";"Pay scale 6th pay")
+                field("Pay scale 6th pay";Rec."Pay scale 6th pay")
                 {
                     ApplicationArea = All;
                 }
-                field("Sanctioned Strength";"Sanctioned Strength")
+                field("Sanctioned Strength";Rec."Sanctioned Strength")
                 {
                     ApplicationArea = All;
                 }
-                field("Persons in Position ";"Persons in Position ")
+                field("Persons in Position ";Rec."Persons in Position ")
                 {
                     ApplicationArea = All;
                 }
-                field("Vacancy Position ";"Vacancy Position ")
+                field("Vacancy Position ";Rec."Vacancy Position ")
                 {
                     ApplicationArea = All;
                 }
-                FIELD("Excess Post";"Excess Post")
+                FIELD("Excess Post";Rec."Excess Post")
                 {
                     ApplicationArea = All;
                 }
-                field("Academic Year";"Academic Year")
+                field("Academic Year";Rec."Academic Year")
                 {
                     ApplicationArea = All;
                 }
-                Field(Remark;Remark)
+                Field(Remark;Rec.Remark)
                 {
                     ApplicationArea = All;
                 }
-                field("Institution Name";"Institution Name")
+                field("Institution Name";Rec."Institution Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Employee Catagory";"Employee Catagory")
+                field("Employee Catagory";Rec."Employee Catagory")
                 {
                     ApplicationArea = All;
                 }
-                field("Pay Scale level 7th pay";"Pay Scale level 7th pay")
+                field("Pay Scale level 7th pay";Rec."Pay Scale level 7th pay")
                 {
                     ApplicationArea = All;
                 }

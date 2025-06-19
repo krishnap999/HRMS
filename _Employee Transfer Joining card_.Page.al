@@ -1,4 +1,4 @@
-page 33065732 "Employee Transfer Joining card"
+page 70534 "Employee Transfer Joining card"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -21,35 +21,35 @@ page 33065732 "Employee Transfer Joining card"
                     TransferHistLLLrec: Record "Transfer Joining History";
                     begin
                     /*Employee.Reset();
-                        Employee.SetRange("No.", HRMSID);
-                        If Employee.FindFirst() then begin
-                            Name := Employee."First Name" + ' ' + Employee."Middle Name" + ' ' + Employee."Last Name";
-                            Designation := Employee.Designation;
-                            //BKS_CodeCommented_08092022*/
+                                Employee.SetRange("No.", HRMSID);
+                                If Employee.FindFirst() then begin
+                                    Name := Employee."First Name" + ' ' + Employee."Middle Name" + ' ' + Employee."Last Name";
+                                    Designation := Employee.Designation;
+                                    //BKS_CodeCommented_08092022*/
                     /*if Employee.Status = Employee.Status::Inactive then begin
-                            TransferHistLLLrec.Reset();
-                            TransferHistLLLrec.SetRange("HRMS ID", HRMSID);
-                            // TransferHistLLLrec.SetRange("Relieving Event", TransferHistLLLrec."Relieving Event"::"Promotion Transfer");
-                            TransferHistLLLrec.SetRange(Status, TransferHistLLLrec.Status::Relieved);
-                            if TransferHistLLLrec.FindFirst() then begin
-                                FromStation := TransferHistLLLrec."From Station";
-                                ToStation := TransferHistLLLrec."To Station";
-                                LetterNo := TransferHistLLLrec."Letter No";
-                                TransferOrderDate := TransferHistLLLrec."Transfer Date";
-                                OrderIssueAuthVar := TransferHistLLLrec."Order Issuing Authority";
-                                RelifeOrderDateVar := TransferHistLLLrec."Relief Order Date";
-                                RelifeOrderNoVar := TransferHistLLLrec."Relief Order No.";
-                                if TransferHistLLLrec."Relieving Event" = TransferHistLLLrec."Relieving Event"::"Promotion Transfer" then begin
-                                    Todesignation := TransferHistLLLrec."To Designation";
-                                    PromotionOredrDateVar := TransferHistLLLrec."Promotion order date";
-                                    TodesignationBoolVar := true;
+                                    TransferHistLLLrec.Reset();
+                                    TransferHistLLLrec.SetRange("HRMS ID", HRMSID);
+                                    // TransferHistLLLrec.SetRange("Relieving Event", TransferHistLLLrec."Relieving Event"::"Promotion Transfer");
+                                    TransferHistLLLrec.SetRange(Status, TransferHistLLLrec.Status::Relieved);
+                                    if TransferHistLLLrec.FindFirst() then begin
+                                        FromStation := TransferHistLLLrec."From Station";
+                                        ToStation := TransferHistLLLrec."To Station";
+                                        LetterNo := TransferHistLLLrec."Letter No";
+                                        TransferOrderDate := TransferHistLLLrec."Transfer Date";
+                                        OrderIssueAuthVar := TransferHistLLLrec."Order Issuing Authority";
+                                        RelifeOrderDateVar := TransferHistLLLrec."Relief Order Date";
+                                        RelifeOrderNoVar := TransferHistLLLrec."Relief Order No.";
+                                        if TransferHistLLLrec."Relieving Event" = TransferHistLLLrec."Relieving Event"::"Promotion Transfer" then begin
+                                            Todesignation := TransferHistLLLrec."To Designation";
+                                            PromotionOredrDateVar := TransferHistLLLrec."Promotion order date";
+                                            TodesignationBoolVar := true;
 
-                                end;
+                                        end;
 
 
-                            end;
+                                    end;
 
-                        end;*/
+                                end;*/
                     //BKS_CodeCommented_08092022
                     //end;
                     end;
@@ -168,7 +168,35 @@ page 33065732 "Employee Transfer Joining card"
 
                 trigger OnAction()var EmployeeLocVar: Record 5200;
                 EmployeeRec1: Record 5200;
+                PrevTrainingHist: Record "Employee Training History";
+                NewTrainingHist: Record "Employee Training History";
+                ActiveTraining: Record "Employee Training";
+                LatestTrainingDate: Date;
                 begin
+                    //megha 8-5-2025 shifting employee training history
+                    // Transfer training history from previous (relieving) company
+                    PrevTrainingHist.ChangeCompany(FromStation);
+                    PrevTrainingHist.Reset();
+                    PrevTrainingHist.SetRange("HRMS ID", HRMSID);
+                    if PrevTrainingHist.FindSet()then begin
+                        repeat // Insert training history into new company
+                            NewTrainingHist.Init();
+                            NewTrainingHist.TransferFields(PrevTrainingHist);
+                            NewTrainingHist.Insert();
+                        until PrevTrainingHist.Next() = 0;
+                    end;
+                    // Maintain latest training in the Active Training List
+                    ActiveTraining.Reset();
+                    ActiveTraining.SetRange("HRMS ID", HRMSID);
+                    if ActiveTraining.FindFirst()then ActiveTraining.Delete(true); // Remove old entry (if keeping only the latest one)
+                    NewTrainingHist.Reset();
+                    NewTrainingHist.SetRange("HRMS ID", HRMSID);
+                    if NewTrainingHist.FindLast()then begin
+                        ActiveTraining.Init();
+                        ActiveTraining.TransferFields(NewTrainingHist);
+                        ActiveTraining.Insert();
+                    end;
+                    //megha 8-5-2025 for shifting training history  
                     EmployeeRec.ChangeCompany(FromStation);
                     if EmployeeRec.Get(HRMSID)then;
                     TransferHist1.ChangeCompany(FromStation);
@@ -241,8 +269,11 @@ page 33065732 "Employee Transfer Joining card"
     var HRMSID: Code[20];
     Name: Text[90];
     Designation: Code[20];
-    FromStation: Text[50];
-    ToStation: Text[50];
+    //Anmol 20 Feb 2025
+    // FromStation: Text[50];
+    FromStation: Text[100];
+    // ToStation: Text[50];
+    ToStation: Text[100];
     TransferOrderDate: Date;
     LetterNo: Code[20];
     JoiningEvent: Enum "Joining Event";

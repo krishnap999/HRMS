@@ -1,4 +1,4 @@
-table 33065863 "Staff Achivement History"
+table 70526 "Staff Achivement History"
 {
     DataClassification = ToBeClassified;
 

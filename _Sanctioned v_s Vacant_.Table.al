@@ -1,0 +1,134 @@
+table 50102 "Sanctioned v/s Vacant"
+{
+    DataClassification = ToBeClassified;
+
+    fields
+    {
+        field(1;"Sanctioned Post No.";Code[20])
+        {
+            trigger OnValidate()var SanctionedvsVacantLrec: Record "Sanctioned v/s Vacant";
+            begin
+                /*  if "Sanctioned Post No." <> xRec."Sanctioned Post No." THEN BEGIN
+                     SalesSetup.Get();
+                     noseries.TestManual(SalesSetup."Sanctioned Post No.");
+                     "No. Series" := '';
+                 end; */
+                if "Sanctioned Post No." < xRec."Sanctioned Post No." then if not SanctionedvsVacantLrec.Get(Rec."Sanctioned Post No.")then begin
+                        SalesSetup.Get();
+                        NoSeriesMgt.TestManual(SalesSetup."Sanctioned Post No.");
+                        "No. Series":='';
+                    end;
+            end;
+        }
+        field(2;"Department/Trade/Section";Text[60])
+        {
+            TableRelation = "List of all Dep/trades/Section"."Departments/Trades/Section";
+            NotBlank = true;
+        /*  trigger OnValidate()
+             var
+
+                 sanctioned: Record "Sanctioned v/s Vacant";
+             begin
+                 sanctioned.reset;
+                 sanctioned.setrange("Department/Trade/Section", Rec."Department/Trade/Section");
+                 sanctioned.SetRange(Designation, Rec.Designation);
+                 if sanctioned.FindFirst() then
+                     Error('A Record Department/Trade/Section %1 and Designation %2 alredy Exist ', Rec."Department/Trade/Section", Rec.Designation);
+             end; */
+        }
+        field(3;"Designation";Code[20])
+        {
+            TableRelation = Designation.Code;
+            //ValidateTableRelation = false;
+            NotBlank = false;
+
+            trigger OnValidate()var sanctioned: Record "Sanctioned v/s Vacant";
+            begin
+                sanctioned.reset;
+                sanctioned.setrange("Department/Trade/Section", Rec."Department/Trade/Section");
+                sanctioned.SetRange(Designation, Rec.Designation);
+                if sanctioned.FindFirst()then Error('A Record Department/Trade/Section %1 and Designation %2 alredy Exist ', Rec."Department/Trade/Section", Rec.Designation);
+            end;
+        }
+        field(4;"Sactioned Strength";Integer)
+        {
+        }
+        field(5;"Remarks";Text[60])
+        {
+        }
+        field(6;"Uploaded Document";Boolean)
+        {
+        }
+        field(7;"No. Series";Code[20])
+        {
+            Caption = 'No. Series';
+            Editable = false;
+            TableRelation = "No. Series";
+        }
+        field(8;"Financial Year";Code[20])
+        {
+            TableRelation = "Financial Year"."Financial Code";
+        }
+        field(9;"Approval No.";Integer)
+        {
+            DataClassification = ToBeClassified;
+
+            trigger OnValidate()var sanctioned: Record "Sanctioned v/s Vacant";
+            begin
+                sanctioned.reset;
+                // sanctioned.setrange("Department/Trade/Section", Rec."Department/Trade/Section");
+                sanctioned.SetRange("Approval No.", Rec."Approval No.");
+                if sanctioned.FindFirst()then Error('A Record Approval No. %1 ', Rec."Approval No.");
+            end;
+        }
+    }
+    keys
+    {
+        key(PK;"Sanctioned Post No.", "Approval No.")
+        {
+            Clustered = true;
+        }
+    }
+    fieldgroups
+    {
+    // Add changes to field groups here
+    }
+    trigger OnInsert()var sanctioned: Record "Sanctioned v/s Vacant";
+    begin
+        SalesSetup.Get;
+        if "Sanctioned Post No." = '' then begin
+            SalesSetup.TestField("Sanctioned Post No.");
+            NoSeriesMgt.InitSeries(SalesSetup."Sanctioned Post No.", xRec."No. Series", 0D, "Sanctioned Post No.", "No. Series");
+        // Message('Generated Document No: %1', Rec."Sanctioned Post No."); // Debugging line
+        end;
+    /* if "Sanctioned Post No." = '' then begin
+            SalesSetup.Get();
+            SalesSetup.TestField("Sanctioned Post No.");
+            "No. Series" := SalesSetup."Sanctioned Post No.";
+            if NoSeries.AreRelated(SalesSetup."Sanctioned Post No.", xRec."No. Series") then
+                "No. Series" := xRec."No. Series";
+            "Sanctioned Post No." := NoSeries.GetNextNo("No. Series");
+        end; */
+    end;
+    /* trigger OnModify()
+    var
+        SanctionedHistory: Record "Sanctioned Post History";
+    begin
+        if Rec."Sactioned Strength" <> xRec."Sactioned Strength" then begin
+            SanctionedHistory.Init();
+            SanctionedHistory.Validate("Sanctioned Post No.", "Sanctioned Post No.");
+            SanctionedHistory.Validate("Old Sanctioned Strength", xRec."Sactioned Strength");
+            SanctionedHistory.Validate("New Sanctioned Strength", Rec."Sactioned Strength");
+            SanctionedHistory.Validate("Modified By", UserId);
+            SanctionedHistory.Validate("Modified On", CurrentDateTime);
+            SanctionedHistory.Insert();
+        end;
+    end; */
+    trigger OnDelete()begin
+    end;
+    trigger OnRename()begin
+    end;
+    var NoSeriesMgt: Codeunit NoSeriesManagement;
+    SalesSetup: Record "Sales & Receivables Setup";
+    isfilled: Boolean;
+}

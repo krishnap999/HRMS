@@ -1,4 +1,4 @@
-report 33065734 "ChangeStatus Trans.Application"
+report 70507 "ChangeStatus Trans.Application"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

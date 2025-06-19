@@ -1,4 +1,4 @@
-enum 33065622 "Discipinary CaseStatus"
+enum 70500 "Discipinary CaseStatus"
 {
     Extensible = true;
 

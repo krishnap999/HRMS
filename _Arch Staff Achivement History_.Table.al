@@ -1,4 +1,4 @@
-table 33065981 "Arch Staff Achivement History"
+table 70505 "Arch Staff Achivement History"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archived Staff Achivement History';

@@ -1,4 +1,4 @@
-page 33065722 "Annual perfomance History Card"
+page 70507 "Annual perfomance History Card"
 {
     //ApplicationArea = All;
     Caption = 'Annual Internal perfomance review History Card';
@@ -41,11 +41,18 @@ page 33065722 "Annual perfomance History Card"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Academic Year field.';
                 }
-                field("Performance Rating";Rec."Performance Rating")
+                // Start Anmol 27 jan 25
+                // field("Performance Rating";Rec."Performance Rating")
+                // {
+                //     ApplicationArea = All;
+                //     ToolTip = 'Specifies the value of the Performance Rating field.';
+                // }
+                field("Performance Appraisal Review";Rec."Performance Appraisal Review")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Performance Rating field.';
                 }
+            // end anmol 27 jan 25
             }
         }
     }

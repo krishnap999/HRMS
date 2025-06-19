@@ -1,4 +1,4 @@
-page 33065723 "Court Case Card"
+page 70511 "Court Case Card"
 {
     //ApplicationArea = All;
     Caption = 'Court Case Card';

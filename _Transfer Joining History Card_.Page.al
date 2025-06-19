@@ -1,4 +1,4 @@
-page 33065739 "Transfer Joining History Card"
+page 70551 "Transfer Joining History Card"
 {
     PageType = Card;
     // ApplicationArea = All;
@@ -12,55 +12,55 @@ page 33065739 "Transfer Joining History Card"
         {
             group(GroupName)
             {
-                field("Entry No";"Entry No")
+                field("Entry No";Rec."Entry No")
                 {
                 }
-                field("HRMS ID";"HRMS ID")
+                field("HRMS ID";Rec."HRMS ID")
                 {
                 }
-                field("Employee Name";Name)
+                field("Employee Name";Rec.Name)
                 {
                 }
-                field(Designation;Designation)
+                field(Designation;Rec.Designation)
                 {
                 }
-                field("From Station";"From Station")
+                field("From Station";Rec."From Station")
                 {
                 }
-                field("To Station";"To Station")
+                field("To Station";Rec."To Station")
                 {
                 }
-                field("Transfer Order Date";"Transfer Date")
+                field("Transfer Order Date";Rec."Transfer Date")
                 {
                 }
-                field("Letter No";"Letter No")
+                field("Letter No";Rec."Letter No")
                 {
                 }
-                field("Relieving Event";"Relieving Event")
+                field("Relieving Event";Rec."Relieving Event")
                 {
                 }
-                field("Joining Event";"Joining Event")
+                field("Joining Event";Rec."Joining Event")
                 {
                 }
-                field("Joining Date";"Joining Date")
+                field("Joining Date";Rec."Joining Date")
                 {
                 }
-                field(Status;Status)
+                field(Status;Rec.Status)
                 {
                 }
-                field("Relief Order No.";"Relief Order No.")
+                field("Relief Order No.";Rec."Relief Order No.")
                 {
                 }
-                field("Relief Order Date";"Relief Order Date")
+                field("Relief Order Date";Rec."Relief Order Date")
                 {
                 }
-                field("To Designation";"To Designation")
+                field("To Designation";Rec."To Designation")
                 {
                 }
-                field("Order Issuing Authority";"Order Issuing Authority")
+                field("Order Issuing Authority";Rec."Order Issuing Authority")
                 {
                 }
-                field("Promotion order date";"Promotion order date")
+                field("Promotion order date";Rec."Promotion order date")
                 {
                 }
             }

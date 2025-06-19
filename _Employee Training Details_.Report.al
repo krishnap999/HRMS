@@ -1,4 +1,4 @@
-report 33065688 "Employee Training Details"
+report 70526 "Employee Training Details"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

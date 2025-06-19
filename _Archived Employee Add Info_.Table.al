@@ -1,4 +1,4 @@
-table 33065976 "Archived Employee Add Info"
+table 70510 "Archived Employee Add Info"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archived Employee Add Info';
@@ -55,7 +55,9 @@ table 33065976 "Archived Employee Add Info"
         field(11;"Pension Remark";Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = " ", "Regular", "NPS";
+            // Start Anmol 17 Jan 2025
+            // OptionMembers = " ", "Regular", "NPS";
+            OptionMembers = " ", "GPF", "NPS";
         }
         field(12;"Dept./Trade/Section";Text[60])
         {

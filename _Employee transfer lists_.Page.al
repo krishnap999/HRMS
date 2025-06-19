@@ -1,4 +1,4 @@
-page 33066434 "Employee transfer lists"
+page 70535 "Employee transfer lists"
 {
     Caption = 'Employee transfer application consolidated list';
     PageType = List;
@@ -100,7 +100,7 @@ page 33066434 "Employee transfer lists"
 
                     trigger OnValidate()var myInt: Integer;
                     begin
-                        rec.TestField(Status, Status::Rejected);
+                        rec.TestField(Status, Rec.Status::Rejected);
                     end;
                 }
             }

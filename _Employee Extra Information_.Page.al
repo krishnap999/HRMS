@@ -1,4 +1,4 @@
-page 33066427 "Employee Extra Information"
+page 70525 "Employee Extra Information"
 {
     PageType = Card;
     ApplicationArea = All;

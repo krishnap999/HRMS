@@ -1,4 +1,4 @@
-enum 33065623 "Type Of Training"
+enum 70503 "Type Of Training"
 {
     Extensible = true;
 

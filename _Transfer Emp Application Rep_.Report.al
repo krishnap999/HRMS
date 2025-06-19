@@ -1,4 +1,4 @@
-report 33065762 "Transfer Emp Application Rep"
+report 70532 "Transfer Emp Application Rep"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

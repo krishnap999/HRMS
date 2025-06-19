@@ -1,4 +1,4 @@
-codeunit 33066459 "HRMS Codeunit"
+codeunit 70500 "HRMS Codeunit"
 {
     trigger OnRun()begin
     end;
@@ -311,9 +311,6 @@ codeunit 33066459 "HRMS Codeunit"
                 if EmpAddDtls."Dept./Trade/Section" <> '' then emp."Dept./Trade/Section":=EmpAddDtls."Dept./Trade/Section";
                 if EmpAddDtls.Designation <> '' then emp.Designation:=EmpAddDtls.Designation;
                 if EmpAddDtls."Home Dist" <> '' then emp."Home Dist":=EmpAddDtls."Home Dist";
-                if EmpAddDtls."Deployment Start Date" <> 0D then emp."Deployment Start Date":=EmpAddDtls."Deployment Start Date";
-                if EmpAddDtls."Deployment End Date" <> 0D then emp."Deployment End Date":=EmpAddDtls."Deployment End Date";
-                if EmpAddDtls."Deployment Location" <> '' then emp."Deployment Location":=EmpAddDtls."Deployment Location";
                 emp.Modify(true);
             end;
         end;

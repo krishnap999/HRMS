@@ -1,4 +1,4 @@
-report 33065809 "DTET Disciplinary Dtls Preview"
+report 70516 "DTET Disciplinary Dtls Preview"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
@@ -24,7 +24,8 @@ report 33065809 "DTET Disciplinary Dtls Preview"
                 column(Designation;Designation)
                 {
                 }
-                column(Disciplinary_Charges;"Disciplinary Charges")
+                //Anmol Changed dsciplinary charges to disciplinary charges file name
+                column(Disciplinary_Charges_File_Name;"Disciplinary Charges File Name")
                 {
                 }
                 column(Disciplinary_CaseLetter_No;"Disciplinary CaseLetter No")

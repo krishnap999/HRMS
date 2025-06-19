@@ -1,4 +1,4 @@
-enum 33065621 "Joining Event"
+enum 70501 "Joining Event"
 {
     Extensible = true;
 
@@ -14,4 +14,9 @@ enum 33065621 "Joining Event"
     value(3;"Other Reasons")
     {
     }
+    // Start Anmol 21 Feb 025
+    value(4;"Routine Transfer")
+    {
+    }
+// end anmol 21 Feb 025
 }

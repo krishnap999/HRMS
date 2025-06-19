@@ -1,4 +1,4 @@
-page 33066443 "Employee Leave Applicat. card"
+page 70526 "Employee Leave Applicat. card"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -122,7 +122,8 @@ page 33066443 "Employee Leave Applicat. card"
     HRMSID: Code[20];
     Name: Text[30];
     designVar: Code[20];
-    TypeofLeave: Option "EL", "HPL", "EOL", "Medical Leave", "Maternity Leave", "Study Leave", Other;
+    // Start anmol add two new fields in option CL and Paternity Leave
+    TypeofLeave: Option "EL", "HPL", "EOL", "CL", "Paternity Leave", "Medical Leave", "Maternity Leave", "Study Leave", Other;
     fileName: Text;
     Filemgmt: Codeunit "File Management";
     Tempblob: Codeunit "Temp Blob";

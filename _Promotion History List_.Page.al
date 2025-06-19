@@ -1,4 +1,4 @@
-page 33065741 "Promotion History List"
+page 70542 "Promotion History List"
 {
     PageType = List;
     ApplicationArea = All;

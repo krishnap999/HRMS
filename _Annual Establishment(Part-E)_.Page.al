@@ -1,4 +1,4 @@
-page 33066438 "Annual Establishment(Part-E)"
+page 70504 "Annual Establishment(Part-E)"
 {
     PageType = Card;
     ApplicationArea = All;

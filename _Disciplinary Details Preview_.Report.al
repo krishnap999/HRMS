@@ -1,4 +1,4 @@
-report 33065687 "Disciplinary Details Preview"
+report 70509 "Disciplinary Details Preview"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
@@ -23,7 +23,8 @@ report 33065687 "Disciplinary Details Preview"
                 column(Designation;Designation)
                 {
                 }
-                column(Disciplinary_Charges;"Disciplinary Charges")
+                // Start Anmol 28 jan 25 replace disciplinary charge to Disciplinary Charge file name
+                column(Disciplinary_Charges_File_Name;"Disciplinary Charges File Name")
                 {
                 }
                 column(Disciplinary_CaseLetter_No;"Disciplinary CaseLetter No")

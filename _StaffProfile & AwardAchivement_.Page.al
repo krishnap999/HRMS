@@ -1,4 +1,4 @@
-page 33065734 "StaffProfile & AwardAchivement"
+page 70548 "StaffProfile & AwardAchivement"
 {
     PageType = Card;
     ApplicationArea = All;

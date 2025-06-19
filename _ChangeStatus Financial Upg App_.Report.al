@@ -1,4 +1,4 @@
-report 33065746 "ChangeStatus Financial Upg App"
+report 70506 "ChangeStatus Financial Upg App"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

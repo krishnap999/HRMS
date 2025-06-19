@@ -1,4 +1,4 @@
-report 33065830 "DTET Employee Custom List"
+report 70517 "DTET Employee Custom List"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

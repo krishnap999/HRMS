@@ -1,4 +1,4 @@
-page 33065730 "Dep/trades/Section Lists"
+page 70515 "Dep/trades/Section Lists"
 {
     PageType = List;
     ApplicationArea = All;
@@ -24,15 +24,15 @@ page 33065730 "Dep/trades/Section Lists"
                 {
                     ApplicationArea = All;
                 }
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group";Rec."Gen. Prod. Posting Group")
                 {
                     ApplicationArea = All;
                 }
-                field("User ID";"User ID")
+                field("User ID";Rec."User ID")
                 {
                     ApplicationArea = All;
                 }
-                field(Location;Location)
+                field(Location;Rec.Location)
                 {
                     ApplicationArea = All;
                 }

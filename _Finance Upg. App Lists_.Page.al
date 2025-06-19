@@ -1,4 +1,4 @@
-page 33065729 "Finance Upg. App Lists"
+page 70538 "Finance Upg. App Lists"
 {
     PageType = List;
     ApplicationArea = All;
@@ -39,6 +39,12 @@ page 33065729 "Finance Upg. App Lists"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                // Start Anmol 27 jan 25
+                field("Effective Date Of MACP";Rec."Effective Date Of MACP")
+                {
+                    ApplicationArea = All;
+                }
+                // End Anmol 27 jan 25
                 field(Type;rec.Type)
                 {
                     ApplicationArea = All;

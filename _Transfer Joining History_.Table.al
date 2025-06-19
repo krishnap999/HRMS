@@ -1,4 +1,4 @@
-table 33065861 "Transfer Joining History"
+table 70528 "Transfer Joining History"
 {
     DataClassification = ToBeClassified;
 
@@ -18,12 +18,20 @@ table 33065861 "Transfer Joining History"
         {
             Caption = 'From Designation';
         }
-        field(5;"From Station";Code[50])
+        //Start Anmol 20 Feb 2025
+        // field(5;"From Station";Code[50])
+        // {
+        // }
+        field(5;"From Station";Code[100])
         {
         }
-        field(6;"To Station";Code[50])
+        // field(6;"To Station";Code[50])
+        // {
+        // }
+        field(6;"To Station";Code[100])
         {
         }
+        // End Anmol
         field(7;"Transfer Date";Date)
         {
         }

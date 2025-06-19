@@ -1,4 +1,4 @@
-xmlport 33065471 "Employee Data Export"
+xmlport 70500 "Employee Data Export"
 {
     Caption = 'Employee Data Export';
     Direction = Export;

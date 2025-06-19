@@ -1,4 +1,4 @@
-page 33065731 "Employee Transfer Relief Card"
+page 70536 "Employee Transfer Relief Card"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -233,8 +233,12 @@ page 33065731 "Employee Transfer Relief Card"
     var HRMSID: Code[20];
     Name: Text[90];
     Designation: Code[20];
-    FromStation: Code[20];
-    ToStation: Code[20];
+    // Start Anmol 20 Feb 2025
+    // FromStation: Code[20];
+    // ToStation: Code[20];
+    FromStation: Code[100];
+    ToStation: Code[100];
+    // End Anmol 20 Feb 2025
     TransferOrderDate: Date;
     LetterNo: Code[20];
     RelievingEvent: Enum "Relieving Event";

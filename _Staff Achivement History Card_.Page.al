@@ -1,4 +1,4 @@
-page 33065742 "Staff Achivement History Card"
+page 70546 "Staff Achivement History Card"
 {
     PageType = Card;
     // ApplicationArea = All;
@@ -11,43 +11,43 @@ page 33065742 "Staff Achivement History Card"
         {
             group(GroupName)
             {
-                field("Entry No";"Entry No")
+                field("Entry No";Rec."Entry No")
                 {
                     ApplicationArea = All;
                 }
-                field("HRMS ID";"HRMS ID")
+                field("HRMS ID";Rec."HRMS ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Employee Name";Name)
+                field("Employee Name";Rec.Name)
                 {
                     ApplicationArea = All;
                 }
-                field(Designation;Designation)
+                field(Designation;Rec.Designation)
                 {
                     ApplicationArea = All;
                 }
-                field("Base Qualification";"Base Qualification")
+                field("Base Qualification";Rec."Base Qualification")
                 {
                     ApplicationArea = All;
                 }
-                field("Inservice Qualification. Upgradation";"Inservice Qua. Upgradation")
+                field("Inservice Qualification. Upgradation";Rec."Inservice Qua. Upgradation")
                 {
                     ApplicationArea = All;
                 }
-                field(Award;Award)
+                field(Award;Rec.Award)
                 {
                     ApplicationArea = All;
                 }
-                field("Achivement Remarks";"Achivement Remarks")
+                field("Achivement Remarks";Rec."Achivement Remarks")
                 {
                     ApplicationArea = All;
                 }
-                field("Academic Year";"Academic Year")
+                field("Academic Year";Rec."Academic Year")
                 {
                     ApplicationArea = All;
                 }
-                field("Award Details";"Award Details")
+                field("Award Details";Rec."Award Details")
                 {
                     ApplicationArea = all;
                 }

@@ -1,4 +1,4 @@
-report 33065795 "Annual Estab. Part-C"
+report 70502 "Annual Estab. Part-C"
 {
     Caption = 'Annual Establishment Part - C Report';
     UsageCategory = ReportsAndAnalysis;

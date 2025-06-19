@@ -1,4 +1,4 @@
-table 33065977 "Archived RTI monitoring"
+table 70511 "Archived RTI monitoring"
 {
     DataClassification = ToBeClassified;
 

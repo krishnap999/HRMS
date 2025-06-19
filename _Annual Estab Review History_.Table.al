@@ -1,4 +1,4 @@
-table 33065972 "Annual Estab Review History"
+table 70501 "Annual Estab Review History"
 {
     DataClassification = ToBeClassified;
     caption = 'Annual Establishment Review History';

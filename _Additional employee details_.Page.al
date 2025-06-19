@@ -1,4 +1,4 @@
-page 33066436 "Additional employee details"
+page 70501 "Additional employee details"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -143,6 +143,21 @@ page 33066436 "Additional employee details"
                     TableRelation = "List of all Dep/trades/Section"."Departments/Trades/Section";
                     Editable = DeptSecTradeEdit;
                 }
+                field("Deployment Start Date";DeploymentStartDate) //megha 16-05-2025
+                {
+                    Caption = 'Deployment Start Date';
+                    ApplicationArea = all;
+                }
+                field("Deployment End Date";DeploymentEndDate) //megha 16-5-2025
+                {
+                    Caption = 'Deployment End Date';
+                    ApplicationArea = all;
+                }
+                field("Deployment Location";DeploymentLocation)
+                {
+                    ApplicationArea = all;
+                    TableRelation = Institute."Institute Code"; //megha 16-5-2025
+                }
             }
         }
     }
@@ -188,6 +203,9 @@ page 33066436 "Additional employee details"
                     EmpAddInfo."Dept./Trade/Section":=EmpLrec."Dept./Trade/Section";
                     EmpAddInfo.Designation:=DesignationVar; //--SKS
                     EmpAddInfo."Home Dist":=HomedistVar; //--SKs
+                    EmpAddInfo."Deployment Date":=DeploymentStartDate; //megha 16-05-2025
+                    EmpAddInfo."Deployment End Date":=DeploymentEndDate; //megha 16-05-2025
+                    EmpAddInfo."Deployment Location":=DeploymentLocation;
                     EmpAddInfo.Insert(true);
                     Message('Submitted');
                     CurrPage.Close();
@@ -245,7 +263,9 @@ page 33066436 "Additional employee details"
     dateOfIncVarEdit: Boolean;
     McapStatus: Option " ", "Nil", "1st", "2nd", "3rd";
     McapStatusEdit: Boolean;
-    PensionRemVar: Option " ", "Regular", "NPS";
+    // Start Anmol 17 Jan 2025
+    //PensionRemVar: Option " ", "Regular", "NPS";
+    PensionRemVar: Option " ", "GPF", "NPS";
     PensionRemVarEdit: Boolean;
     DeptSecTrade: Text[60];
     DeptSecTradeEdit: Boolean;
@@ -253,4 +273,7 @@ page 33066436 "Additional employee details"
     HomedistVar: Code[20];
     DesignationVarBool: Boolean;
     HomedistVarBool: Boolean;
+    DeploymentLocation: Code[20];
+    DeploymentStartDate: Date; //megha 16-05-2025
+    DeploymentEndDate: Date; //megha 16-05-2025
 }

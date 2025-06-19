@@ -1,4 +1,4 @@
-page 33065747 "Employee Training History List"
+page 70530 "Employee Training History List"
 {
     PageType = List;
     ApplicationArea = All;
@@ -59,6 +59,15 @@ page 33065747 "Employee Training History List"
                 {
                     ApplicationArea = All;
                 }
+                field("Modified By";Rec."Modified By")
+                {
+                    ApplicationArea = all;
+                }
+                field("Modified Date Time";Rec."Modified Date Time")
+                {
+                    Caption = 'Modified On';
+                    ApplicationArea = all;
+                }
             }
         }
         area(Factboxes)
@@ -69,28 +78,51 @@ page 33065747 "Employee Training History List"
     {
         area(Processing)
         {
-            action(Download)
+            action("Download")
             {
                 ApplicationArea = All;
-                // Promoted = true;
                 Image = Download;
 
-                trigger OnAction()var FilemngCU: Codeunit "File Management";
-                inst: InStream;
-                os: OutStream;
-                tempblobloc: Codeunit "Temp Blob";
+                /* trigger OnAction()
+                var
+                    FilemngCU: Codeunit "File Management";
+                    EmpTraining: Record "Employee Training";
+                    inst: InStream;
+                    tempblobloc: Codeunit "Temp Blob";
+                    FileCount: Integer;
+                    outs: OutStream;
+
                 begin
-                    Rec.CalcFields(Certificate);
-                    if Rec.Certificate.HasValue then begin
-                        Rec.Certificate.CreateInStream(inst);
-                        tempblobloc.CreateOutStream(os);
-                        CopyStream(os, inst);
-                        FilemngCU.BLOBExport(tempblobloc, 'Employee_training_' + Rec."HRMS ID" + '.pdf', true);
-                    end
+                    EmpTraining.Reset();
+                    EmpTraining.SetRange("HRMS ID", Rec."HRMS ID");
+                    if EmpTraining.FindSet() then begin
+                        FileCount := 0;
+                        repeat
+                            EmpTraining.CalcFields(Certificate);
+                            if EmpTraining.certificate.HasValue then begin
+                                FileCount += 1;
+                                EmpTraining.Certificate.CreateInStream(inst);
+                                tempblobloc.CreateOutStream(outs);
+                                CopyStream(outs, inst);
+                                FilemngCU.BLOBExport(tempblobloc, 'Employee_training_' + EmpTraining."HRMS ID" + '_' + Format(FileCount) + '.pdf', true);
+                            end;
+                        until EmpTraining.Next() = 0;
+                        if FileCount = 0 then
+                            Error('No attachments found for HRMS ID: %1', Rec."HRMS ID");
+                        Message('%1 file(s) downloaded successfully.', FileCount);
+                    end else
+                        Error('No records found for HRMS ID: %1', Rec."HRMS ID");
+                end;
+            } */
+                trigger OnAction()var FilemngCU: Codeunit "File Management";
+                Tempblob: Codeunit "Temp Blob";
+                begin
+                    if Tempblob.Length() > 0 then filenm:=FilemngCU.BLOBExport(Tempblob, 'Application_' + Rec."HRMS ID" + '.pdf', true)
                     else
-                        Error('File Not found');
+                        Error('Document Not found');
                 end;
             }
         }
     }
+    var filenm: Text[50];
 }

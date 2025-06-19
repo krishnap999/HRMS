@@ -1,4 +1,4 @@
-table 33065864 "Disciplinary History"
+table 70516 "Disciplinary History"
 {
     DataClassification = ToBeClassified;
 
@@ -17,9 +17,18 @@ table 33065864 "Disciplinary History"
         field(4;"Designation";Code[20])
         {
         }
-        field(5;"Disciplinary Charges";Text[50])
+        // Start Anmol
+        // field(5;"Disciplinary Charges";Text[50])
+        // {
+        // }
+        field(5;"Disciplinary Charges File Name";Text[100])
         {
         }
+        field(16;"Upload Disciplinary ChargesDoc";Blob)
+        {
+            DataClassification = ToBeClassified;
+        }
+        // End Anmol
         field(6;"Disciplinary CaseLetter No";Code[20])
         {
         }
@@ -46,6 +55,15 @@ table 33065864 "Disciplinary History"
         }
         field(14;"Modified Date Time";DateTime)
         {
+        }
+        // Start Anmol 27 jan 25
+        field(15;"Sl. No";Integer)
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(17;VigilanceCasePending;Boolean)
+        {
+            DataClassification = ToBeClassified;
         }
     }
     keys

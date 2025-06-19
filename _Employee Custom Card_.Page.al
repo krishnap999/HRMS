@@ -1,4 +1,4 @@
-page 33065728 "Employee Custom Card"
+page 70523 "Employee Custom Card"
 {
     PageType = Card;
     ApplicationArea = All;
@@ -164,25 +164,17 @@ page 33065728 "Employee Custom Card"
                     ApplicationArea = All;
                     ExtendedDatatype = Masked;
                 }
-                field("SLCM Employee";"SLCM Employee")
+                field("SLCM Employee";Rec."SLCM Employee")
                 {
                     ApplicationArea = All;
                 }
-                field("Deployment Location";"Deployment Location")
+                field("Deployment Location";Rec."Deployment Location")
                 {
                     ApplicationArea = All;
                 }
-                field("Deployment Date";"Deployment Date")
+                field("Deployment Date";Rec."Deployment Date")
                 {
                     ApplicationArea = All;
-                }
-                field("Deployment Start Date";"Deployment Start Date")
-                {
-                    ApplicationArea = all;
-                }
-                field("Deployment End Date";"Deployment End Date")
-                {
-                    ApplicationArea = all;
                 }
             }
         }

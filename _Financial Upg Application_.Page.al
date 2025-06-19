@@ -1,9 +1,9 @@
-page 33066447 "Financial Upg Application"
+page 70539 "Financial Upg Application"
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Lists;
-    // SourceTable = "Financial Upg Application";
+    SourceTable = "Financial Upg Application";
     Caption = 'Financial Upgradation Application Form';
 
     layout
@@ -18,11 +18,17 @@ page 33066447 "Financial Upg Application"
                     TableRelation = Employee."No." where("SLCM Employee"=const(false));
 
                     trigger OnValidate()var EmpVar: Record Employee;
+                    FinUpgr: Record "Financial Upg Application";
                     begin
                         if EmpVar.Get(HRMSID)then begin
                             EmpNameVar:=EmpVar."First Name";
                             DesigngVar:=EmpVar.Designation;
                             DatAppUpdate:=Today;
+                            FinUpgr.Reset();
+                            FinUpgr.SetRange("HRMS ID", HRMSID);
+                            if FinUpgr.FindLast()then typevar:=FinUpgr.Type
+                            else
+                                typevar:=FinUpgr.type::" ";
                             currstation:=EmpVar."Current Station";
                         end;
                     end;
@@ -42,9 +48,16 @@ page 33066447 "Financial Upg Application"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                //Anmol start
+                field("Effective Date Of MACP";Rec."Effective Date Of MACP")
+                {
+                    ApplicationArea = all;
+                }
+                //Anmol end
                 field("Type";typevar)
                 {
                     ApplicationArea = All;
+                    Editable = Updatebtn;
                 }
                 field("Current Station";currstation)
                 {
@@ -58,7 +71,45 @@ page 33066447 "Financial Upg Application"
     {
         area(Processing)
         {
-            action("Upload Aplication")
+            action("Update")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
+
+                trigger OnAction()var FinUgApp: Record "Financial Upg Application";
+                HistoryRec: Record "Financial Upg App history";
+                InStream1: InStream;
+                OutStream1: OutStream;
+                begin
+                    if Rec.IsEmpty then Error('No record to submit.');
+                    if(typevar <> typevar::" ") or (Tempblob.HasValue())then begin
+                        if not Confirm('You are about to change existing data. Previous Type and attachment will be removed. Continue?', false)then Error('Update cancelled.');
+                        // Store history before updating
+                        HistoryRec.Init();
+                        HistoryRec."HRMS ID":=Rec."HRMS ID";
+                        HistoryRec."Date of application upload":=Today;
+                        HistoryRec.Type:=typevar;
+                        HistoryRec."Current Station":=currstation;
+                        HistoryRec."Application file name":=fileName;
+                        if Tempblob.HasValue()then begin
+                            HistoryRec."Application file".CreateOutStream(OutStream1);
+                            Tempblob.CreateInStream(InStream1);
+                            CopyStream(OutStream1, InStream1);
+                        end;
+                        HistoryRec."Modified Date Time":=CurrentDateTime;
+                        HistoryRec."User Id":=UserId;
+                        HistoryRec.Insert(true);
+                        // Clear existing attachment
+                        Clear(Tempblob);
+                        Clear(fileName);
+                    end;
+                    Updatebtn:=true;
+                    Rec.Modify(true);
+                    Message('Training record submitted for HRMS ID: %1', Rec."HRMS ID");
+                end;
+            }
+            action("Upload Application")
             {
                 ApplicationArea = All;
                 Image = Add;
@@ -71,7 +122,7 @@ page 33066447 "Financial Upg Application"
                     ins:=Tempblob.CreateInStream();
                     if Tempblob.Length() > 3000000 then Error('File size must be less than or equal to 3MB')
                     else
-                        Message('File uploded');
+                        Message('File uploaded');
                 end;
             }
             action("Download Document")
@@ -94,7 +145,7 @@ page 33066447 "Financial Upg Application"
 
                 trigger OnAction()var FinanceUpgradRecLVar: Record "Financial Upg Application";
                 begin
-                    if Confirm('Do you want to submit the current Document ?', false)then begin
+                    if Confirm('Do you want to submit the current Document?', false)then begin
                         FinanceUpgradRecLVar.Reset();
                         FinanceUpgradRecLVar.Init();
                         FinanceUpgradRecLVar.Validate("HRMS ID", HRMSID);
@@ -125,4 +176,5 @@ page 33066447 "Financial Upg Application"
     typevar: Option " ", MACP, RACP;
     DesigngVar: Code[20];
     currstation: Text[50];
+    Updatebtn: Boolean;
 }

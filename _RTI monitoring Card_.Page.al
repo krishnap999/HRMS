@@ -1,4 +1,4 @@
-page 33066445 "RTI monitoring Card"
+page 70544 "RTI monitoring Card"
 {
     //ApplicationArea = All;
     Caption = 'RTI monitoring Card';

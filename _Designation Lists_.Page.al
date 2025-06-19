@@ -1,4 +1,4 @@
-page 33065727 "Designation Lists"
+page 70516 "Designation Lists"
 {
     PageType = List;
     ApplicationArea = All;

@@ -1,4 +1,4 @@
-page 33065743 "Staff Achivement History List"
+page 70547 "Staff Achivement History List"
 {
     PageType = List;
     ApplicationArea = All;

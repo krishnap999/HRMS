@@ -1,4 +1,4 @@
-table 33065979 "Archived Trans Joining History"
+table 70512 "Archived Trans Joining History"
 {
     DataClassification = ToBeClassified;
     Caption = 'Archived Transfer Joining History';
@@ -19,12 +19,20 @@ table 33065979 "Archived Trans Joining History"
         {
             Caption = 'From Designation';
         }
-        field(5;"From Station";Code[20])
+        // Start Anmol 20 Feb 2025
+        // field(5;"From Station";Code[20])
+        // {
+        // }
+        // field(6;"To Station";Code[20])
+        // {
+        // }
+        field(5;"From Station";Code[100])
         {
         }
-        field(6;"To Station";Code[20])
+        field(6;"To Station";Code[100])
         {
         }
+        // End Anmol 20 Feb 2025
         field(7;"Transfer Date";Date)
         {
         }

@@ -1,4 +1,4 @@
-table 33065868 "Annual Performance Review"
+table 70503 "Annual Performance Review"
 {
     DataClassification = ToBeClassified;
 
@@ -23,9 +23,14 @@ table 33065868 "Annual Performance Review"
         field(6;"Academic Year";Code[20])
         {
         }
-        field(7;"Performance Rating";Text[3])
+        //Anmol start
+        // field(7;"Performance Rating";Text[3])
+        // {
+        // }
+        field(7;"Performance Appraisal Review";Enum PerformanceRatingEnum)
         {
         }
+        //anmol end
         field(8;"Created By";Code[50])
         {
         }

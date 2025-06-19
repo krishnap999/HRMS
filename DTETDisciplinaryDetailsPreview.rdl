@@ -758,8 +758,8 @@ End Function
         <Field Name="Designation">
           <DataField>Designation</DataField>
         </Field>
-        <Field Name="Disciplinary_Charges">
-          <DataField>Disciplinary_Charges</DataField>
+        <Field Name="Disciplinary_Charges_File_Name">
+          <DataField>Disciplinary_Charges_File_Name</DataField>
         </Field>
         <Field Name="Disciplinary_CaseLetter_No">
           <DataField>Disciplinary_CaseLetter_No</DataField>

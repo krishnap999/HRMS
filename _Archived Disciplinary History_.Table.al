@@ -1,4 +1,4 @@
-table 33065982 "Archived Disciplinary History"
+table 70509 "Archived Disciplinary History"
 {
     DataClassification = ToBeClassified;
 
@@ -17,7 +17,7 @@ table 33065982 "Archived Disciplinary History"
         field(4;"Designation";Code[20])
         {
         }
-        field(5;"Disciplinary Charges";Text[50])
+        field(5;"Disciplinary Charges File Name";Text[100])
         {
         }
         field(6;"Disciplinary CaseLetter No";Code[20])
@@ -49,6 +49,11 @@ table 33065982 "Archived Disciplinary History"
         }
         field(15;"Sl. No";Integer)
         {
+        }
+        //Start Anmol  28 jan 25 filed added
+        field(17;VigilanceCasePending;Boolean)
+        {
+            DataClassification = ToBeClassified;
         }
     }
     keys

@@ -1,4 +1,4 @@
-page 33066426 "Archive Employee Custom List"
+page 70510 "Archive Employee Custom List"
 {
     ApplicationArea = All;
     Caption = 'In-Active Employee Custom List';

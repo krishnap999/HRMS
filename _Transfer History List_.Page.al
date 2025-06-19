@@ -1,4 +1,4 @@
-page 33065738 "Transfer History List"
+page 70550 "Transfer History List"
 {
     PageType = List;
     ApplicationArea = All;
@@ -61,7 +61,7 @@ page 33065738 "Transfer History List"
                 {
                     ApplicationArea = All;
                 }
-                field("Promotion letter no";"Promotion letter no")
+                field("Promotion letter no";Rec."Promotion letter no")
                 {
                     ApplicationArea = All;
                 }
@@ -81,7 +81,7 @@ page 33065738 "Transfer History List"
                 {
                     ApplicationArea = All;
                 }
-                field("To Designation";"To Designation")
+                field("To Designation";Rec."To Designation")
                 {
                     ApplicationArea = All;
                 }
