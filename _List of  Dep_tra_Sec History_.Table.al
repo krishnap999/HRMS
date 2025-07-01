@@ -1,4 +1,4 @@
-table 33065975 "List of  Dep/tra/Sec History"
+/* table 33065975 "List of  Dep/tra/Sec History"
 {
     DataClassification = ToBeClassified;
     // LookupPageId = 50204;
@@ -62,3 +62,4 @@ table 33065975 "List of  Dep/tra/Sec History"
     trigger OnRename()begin
     end;
 }
+ */

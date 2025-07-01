@@ -8,6 +8,7 @@ page 50107 "Sanctioned v/s Vacant List"
     UsageCategory = Administration;
     SourceTable = "Sanctioned v/s Vacant";
     DeleteAllowed = false;
+    RefreshOnActivate = true;
 
     layout
     {
@@ -15,30 +16,30 @@ page 50107 "Sanctioned v/s Vacant List"
         {
             repeater(GroupName)
             {
-                field("Sanctioned Post No.";Rec."Sanctioned Post No.")
+                field("Sanctioned Post No."; Rec."Sanctioned Post No.")
                 {
                     ApplicationArea = all;
                 }
-                field("Department/Trade/Section";Rec."Department/Trade/Section")
+                field("Department/Trade/Section"; Rec."Department/Trade/Section")
                 {
                     ApplicationArea = ALL;
                 }
-                field(Designation;Rec.Designation)
+                field(Designation; Rec.Designation)
                 {
                     ApplicationArea = ALL;
                 }
-                field("Approval No.";Rec."Approval No.")
+                field("Approval No."; Rec."Approval No.")
                 {
                 }
-                field("Sactioned Strength";Rec."Sactioned Strength")
-                {
-                    ApplicationArea = all;
-                }
-                field(Remarks;Rec.Remarks)
+                field("Sactioned Strength"; Rec."Sactioned Strength")
                 {
                     ApplicationArea = all;
                 }
-                field("Uploaded Document";Rec."Uploaded Document")
+                field(Remarks; Rec.Remarks)
+                {
+                    ApplicationArea = all;
+                }
+                field("Uploaded Document"; Rec."Uploaded Document")
                 {
                     ApplicationArea = all;
                 }
@@ -51,10 +52,39 @@ page 50107 "Sanctioned v/s Vacant List"
         {
             action(ActionName)
             {
-                trigger OnAction()begin
+                trigger OnAction()
+                begin
                 end;
             }
         }
+
     }
-    var myInt: Integer;
+    trigger OnOpenPage()
+    var
+        myInt: Integer;
+    begin
+        //  Clear(Rec);
+    end;
+
+   
+    /* trigger OnOpenPage()
+    var
+        curec: Record "Sanctioned v/s Vacant";
+    begin
+        if curec.Get(Rec."Sanctioned Post No.") then begin
+
+            if (curec."Department/Trade/Section" = '') and
+                       (curec.Designation = '') and
+                       (curec."Sactioned Strength" = 0) and
+                       (curec."Approval No." = '') and
+                       (curec."Financial Year" = '') and (curec."Uploaded Document" = true) then
+
+                // if not submit and (Rec."Sanctioned Post No." <> '') and IsEmpty then begin
+                Rec.Delete();
+
+        end;
+    end;
+ */
+    var
+        myInt: Integer;
 }
