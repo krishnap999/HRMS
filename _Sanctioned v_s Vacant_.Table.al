@@ -57,17 +57,25 @@ table 50102 "Sanctioned v/s Vacant"
         }
         field(4; "Sactioned Strength"; Integer)
         {
-            /*             trigger OnValidate()
-                        var
-                            myInt: Integer;
-                        begin
-                            if "Sactioned Strength" <> 0 then
-                                rec.submit := false;
-                            rec.Modify();
-                        end; */
+            trigger OnValidate()
+            var
+                myInt: Integer;
+            begin
+                IF xRec."Sactioned Strength" <> 0 then
+                    "XSactioned Strength" := xRec."Sactioned Strength";
+                rec.Modify();
+            end;
         }
         field(5; "Remarks"; Text[60])
         {
+            trigger OnValidate()
+            var
+                myInt: Integer;
+            begin
+                IF xRec.Remarks <> '' then
+                    xRemarks := xRec.Remarks;
+                rec.Modify();
+            end;
         }
         field(6; "Uploaded Document"; Boolean)
         {
@@ -94,6 +102,9 @@ table 50102 "Sanctioned v/s Vacant"
                 // sanctioned.setrange("Department/Trade/Section", Rec."Department/Trade/Section");
                 sanctioned.SetRange("Approval No.", Rec."Approval No.");
                 if sanctioned.FindFirst() then Error('A Record Approval No. %1 ', Rec."Approval No.");
+                IF xRec."Approval No." <> '' then
+                    "XApproval No." := xRec."Approval No.";
+                rec.Modify();
             end;
         }
         field(10; Lineno; Integer)
@@ -108,6 +119,24 @@ table 50102 "Sanctioned v/s Vacant"
         {
             DataClassification = ToBeClassified;
         }
+
+
+        field(13; "XSactioned Strength"; Integer)
+        {
+            DataClassification = ToBeClassified;
+
+
+        }
+        field(14; "XApproval No."; Code[30])
+        {
+            DataClassification = ToBeClassified;
+
+           
+        }
+        field(15; "xRemarks"; Text[60])
+        {
+        }
+
     }
     keys
     {

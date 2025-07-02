@@ -20,7 +20,7 @@ page 50106 "Sanctioned v/s Vacant" //sai
                 field("Sanctioned Post No."; Rec."Sanctioned Post No.")
                 {
                     ToolTip = 'Specifies the value of the Sanctioned Post No. field.', Comment = '%';
-                    Editable = ATtachc;
+                    Editable = ATtachB;
                 }
                 field("Department/Trade/Section"; Rec."Department/Trade/Section")
                 {
@@ -115,8 +115,9 @@ page 50106 "Sanctioned v/s Vacant" //sai
                 begin
                     ATtachB := true;
                     //  ATtachc := true;
-                    rec.Remarks := '';
+                    //  rec.Remarks := '';
                     rec.submit := false;
+                    // rec.submit2 := false;
                     //  rec."Approval No." := '';
                     //    rec."Sactioned Strength" := 0;
                     rec.Modify();
@@ -181,6 +182,8 @@ page 50106 "Sanctioned v/s Vacant" //sai
                     DocumentAttachment, DocumentAttachment1 : Record "Document Attachment";
                     SanctionedvsVacantGrec, sanctioned : Record "Sanctioned v/s Vacant";
                     SanctionedHistory: Record "Sanctioned Post History";
+                    SanctionedHistory2: Record "Sanctioned Post History";
+                    SanctionedHistory3: Record "Sanctioned Post History";
                     SanctionedHistory1: Record "Sanctioned Post History";
                     SanctionedHistoryLrec: Record "Sanctioned Post History";
                     SanctionedHistoryLrec1, SanctionedHistoryLrec2 : Record "Sanctioned Post History";
@@ -194,6 +197,19 @@ page 50106 "Sanctioned v/s Vacant" //sai
                     rec.TestField("Sactioned Strength");
                     rec.TestField("Financial Year");
                     rec.TestField(Remarks);
+                    SanctionedHistory2.Reset();
+                    SanctionedHistory2.SetRange("Sanctioned Post No.", Rec."Sanctioned Post No.");
+                    SanctionedHistory2.SetRange("Entry No.", REC."Approval No.");
+                    if SanctionedHistory2.FindFirst() then
+                        Error('Record with Approval . %1 already exists.', SanctionedHistory2."Approval No.");
+                    SanctionedHistory3.Reset();
+                    SanctionedHistory3.SetRange("Sanctioned Post No.", Rec."Sanctioned Post No.");
+                    SanctionedHistory3.SetRange("New Sanctioned Strength", rec."Sactioned Strength");
+                    if SanctionedHistory3.FindFirst() then
+                        Error('Record with Sanctioned Strengt %1 already exists.in sanctioned post history', SanctionedHistory3."New Sanctioned Strength");
+
+
+
                     DocumentAttachment.Reset();
                     DocumentAttachment.SetRange("Table ID", Database::"Sanctioned v/s Vacant");
                     DocumentAttachment.SetRange("No.", Rec."Sanctioned Post No.");
@@ -237,8 +253,6 @@ page 50106 "Sanctioned v/s Vacant" //sai
                         Message('Record Posted Successfully.');
                     end
                     else begin
-                        if ApprovalVar = Rec."Approval No." then
-                            Error('Record with Entry No. %1 already exists.', rec."Approval No.");
 
                         SanctionedHistoryLrec.Reset();
                         SanctionedHistoryLrec.SetRange("Sanctioned Post No.", SanctionedHistory."Sanctioned Post No.");
@@ -335,7 +349,6 @@ page 50106 "Sanctioned v/s Vacant" //sai
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         ATtachB := true;
-        ATtachc := true;
         EditBolean := true;
         IsSubmitted := false;
     end;
@@ -345,19 +358,18 @@ page 50106 "Sanctioned v/s Vacant" //sai
         myInt: Integer;
     begin
         //  ATtachB := true;
-        sanctionedInt := rec."Sactioned Strength";
+        //sss sanctionedInt := rec."Sactioned Strength";
         ApprovalVar := Rec."Approval No.";
     end;
 
 
     var
         ApprovalVar: Code[30];
-        sanctionedInt: Integer;
         IsSubmitted: Boolean;
         //submit: Boolean;
         coniforBol: Boolean;
         ATtachB: Boolean;
-        ATtachc: Boolean;
+        //ATtachc: Boolean;
         EditBolean: Boolean;
         AttachMent: Codeunit AttachmentsCodeunit;
         booleanr: Boolean; //sai
@@ -387,27 +399,22 @@ page 50106 "Sanctioned v/s Vacant" //sai
              (rec."Approval No." <> '') and
              (rec."Financial Year" <> '') and (rec."Uploaded Document" = true) then begin
             if (rec.submit = false) then begin
-                if not Confirm('The record %1 Document has not submited. Do you want to save it?', true, rec."Sanctioned Post No.") then
+                if Confirm('The record %1 Document has not submited. Do you want to save it?', true, rec."Sanctioned Post No.") then begin
                     IsSubmitted := false;
+                    rec.submit2 := true;
+
+                    exit;
+                end;
+                rec."Sactioned Strength" := Rec."XSactioned Strength";
+                Rec."Approval No." := rec."XApproval No.";
+                rec.Remarks := rec.xRemarks;
+                rec.Modify();
+
                 if rec.submit2 = false then begin
                     if IsSubmitted = false then
                         rec.Delete();
                 end;
-
-            end;
-            if coniforBol = false then begin
-                if (rec.submit = true) then begin
-                    if not Confirm('The . Do you want to save it Sactioned strength?', true, rec."Sactioned Strength") then
-                        rec."Sactioned Strength" := sanctionedInt;
-                    rec.Modify();
-                    IsSubmitted := true;
-
-                end;
             end;
         end;
-
     end;
-
-
-
 }
